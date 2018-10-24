@@ -10,6 +10,7 @@ if [ -z $S3_LS ]; then
 
   echo "New Vod: $VOD_ID"
   ./concat_ubuntu -vod $VOD_ID;
+  aws s3 mv $VOD_ID.mp4 s3://everlords-videos/$VOD_ID.mp4 && echo "Saved successfully"
 
 else
 
