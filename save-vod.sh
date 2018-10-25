@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 curl -H 'Client-ID: aokchnui2n8q38g0vezl9hq6htzy4c' -X GET 'https://api.twitch.tv/helix/videos?user_id=178943555' \
-  | jq '.data[0].id' | read VOD_ID
+  | jq '.data[0].id' | tr -d '"' | read VOD_ID
 
 
 aws s3 ls everlords-videos/$VOD_ID.mp4 | read S3_LS
