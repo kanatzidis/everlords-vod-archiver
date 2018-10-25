@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-RUN apt-get update && apt-get install -y ffmpeg awscli wget jq zsh
+RUN apt-get update && apt-get install -y ffmpeg awscli wget jq zsh curl
 
 RUN mkdir -p /var/bin/everlords-archiver
 
