@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 curl -H 'Client-ID: aokchnui2n8q38g0vezl9hq6htzy4c' -X GET 'https://api.twitch.tv/helix/videos?user_id=178943555' \
-  | jq '.data[0]' | read VOD_JSON
+  | jq -c '.data[0]' | read VOD_JSON
 
 
 echo $VOD_JSON | jq '.id' | tr -d '"' | read VOD_ID
